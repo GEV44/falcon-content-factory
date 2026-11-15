@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Falcon Content Factory">
+  <defs>
+    <linearGradient id="m" x1="96" y1="96" x2="416" y2="416" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7F8FA"/><stop offset=".4" stop-color="#C9CFD6"/><stop offset=".68" stop-color="#8A939E"/><stop offset="1" stop-color="#E3E7EB"/>
+    </linearGradient>
+    <radialGradient id="g" cx="22%" cy="14%" r="90%"><stop offset="0" stop-color="#232830"/><stop offset=".6" stop-color="#0E1115"/><stop offset="1" stop-color="#07090B"/></radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#g)"/>
+  <rect x="6" y="6" width="500" height="500" rx="110" fill="none" stroke="#FFFFFF" stroke-opacity=".14" stroke-width="4"/>
+  <path d="M132 128h276l-68 74H132z" fill="url(#m)"/>
+  <path d="M132 240h186l-68 74H132z" fill="url(#m)" opacity=".86"/>
+  <path d="M132 352h90l-90 84z" fill="url(#m)" opacity=".7"/>
+</svg>

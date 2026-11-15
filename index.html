@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru" data-l="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Falcon Content Factory</title>
+<meta name="description" content="Контент-завод для ваших брендов: от идеи до готового ролика и публикации — в одной системе.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Falcon Content Factory">
+<meta property="og:title" content="Falcon Content Factory">
+<meta property="og:description" content="Контент-завод для ваших брендов: от идеи до готового ролика и публикации — в одной системе.">
+<meta property="og:url" content="https://gev44.github.io/falcon-content-factory/">
+<meta property="og:image" content="https://gev44.github.io/falcon-content-factory/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gev44.github.io/falcon-content-factory/og.png">
+<meta name="theme-color" content="#0b0d10">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Onest:wght@400;500;600&display=swap">
+<style>
+/* One dark editorial column (Falcon brand). Bilingual: every text exists as [lang=ru] and [lang=en]; html[data-l] picks one. */
+:root {
+  --bg: #0b0d10; --surface: #13171c; --line: #252b33; --fg: #eef1f4; --fg2: #c3cad2; --mute: #8b94a0;
+  --steel: #c9d0d8; --ok: #5fc596; --gold: #e2b05a;
+  --display: 'Playfair Display', Georgia, serif; --body: Onest, 'Segoe UI', system-ui, sans-serif;
+  color-scheme: dark;
+}
+html[data-l="ru"] [lang="en"], html[data-l="en"] [lang="ru"] { display: none !important; }
+body { background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--body); margin: 0; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-block: 28px 72px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 72px; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.brand { font: 700 18px/1 var(--display); letter-spacing: .01em; }
+.brand small { display: block; font: 600 10px/1 var(--body); letter-spacing: .28em; color: var(--mute); margin-top: 5px; }
+.sw { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+.sw button { all: unset; cursor: pointer; padding: 6px 14px; border-radius: 999px; font: 600 13px/1 var(--body); color: var(--mute); }
+.sw button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.sw button:focus-visible { outline: 2px solid var(--steel); outline-offset: 2px; }
+h1, h2 { font-family: var(--display); font-weight: 700; letter-spacing: -.01em; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(36px, 6.4vw, 68px); line-height: 1.02; }
+h2 { font-size: clamp(27px, 3.8vw, 40px); line-height: 1.1; }
+h3 { font: 600 18px/1.35 var(--body); margin: 0; }
+p { margin: 0; color: var(--fg2); }
+.k { font: 600 12px/1 var(--body); letter-spacing: .22em; text-transform: uppercase; color: var(--mute); }
+.hero { display: grid; gap: 20px; }
+.lead { font-size: clamp(17px, 2.2vw, 21px); max-width: 760px; }
+.rule { width: 96px; height: 2px; background: linear-gradient(90deg, #e2e6eb, #6f7884); }
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; color: var(--fg2); width: fit-content; }
+.open { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 12px; background: var(--fg); color: var(--bg); font: 600 16px/1 var(--body); text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+.open:hover { background: #fff; }
+.open:focus-visible { outline: 2px solid var(--steel); outline-offset: 3px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+video { width: 100%; display: block; border-radius: 14px; border: 1px solid var(--line); background: #000; }
+.player { box-shadow: 0 30px 80px rgba(0,0,0,.55); border-radius: 14px; }
+.sec { display: grid; gap: 26px; }
+.intro { max-width: 720px; }
+.steps { display: grid; gap: 56px; counter-reset: s; }
+.step { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 36px; align-items: center; }
+.step:nth-child(even) .txt { order: 2; }
+.step:nth-child(even) { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.txt { display: grid; gap: 12px; }
+.num { font: 700 15px/1 var(--display); color: var(--gold); letter-spacing: .08em; }
+.step img { width: 100%; display: block; border-radius: 12px; border: 1px solid var(--line); aspect-ratio: 16 / 10.4; object-fit: cover; object-position: top left; box-shadow: 0 18px 50px rgba(0,0,0,.45); }
+.clip { position: relative; min-width: 0; }
+.clip video { aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; border-radius: 12px; box-shadow: 0 18px 50px rgba(0,0,0,.45); }
+.live { position: absolute; left: 12px; top: 12px; display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px; border-radius: 999px; background: rgba(11,13,16,.82); border: 1px solid var(--line); font: 600 11px/1 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--fg2); }
+.live i { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 3px rgba(95,197,150,.18); }
+@media (prefers-reduced-motion: reduce) { .clip video { animation: none; } }
+.try { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; counter-reset: t; }
+.try li { counter-increment: t; padding: 20px 20px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); display: grid; gap: 8px; align-content: start; min-width: 0; }
+.try li::before { content: counter(t, decimal-leading-zero); font: 700 15px/1 var(--display); color: var(--gold); letter-spacing: .08em; }
+.try b { font: 600 17px/1.3 var(--body); color: var(--fg); }
+@media (max-width: 900px) { .try { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .try { grid-template-columns: minmax(0, 1fr); } }
+.week { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.week .reel video { aspect-ratio: 9 / 16; object-fit: cover; }
+.week .reel h3 { font-size: 15px; }
+.week .reel p { font-size: 13px; color: var(--mute); }
+@media (max-width: 760px) { .week { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+.reels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.reel { display: grid; gap: 10px; }
+.reel video { aspect-ratio: 9 / 16; max-height: 640px; object-fit: cover; }
+.gets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.card { padding: 22px 22px 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); display: grid; gap: 8px; align-content: start; min-width: 0; }
+.card .ic { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: #1c2128; border: 1px solid var(--line); margin-bottom: 6px; }
+.card .ic svg { width: 18px; height: 18px; stroke: var(--steel); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.launch { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.launch .card { border-top: 2px solid var(--gold); }
+.cta { padding: 34px 32px; border-radius: 18px; background: linear-gradient(135deg, #1b2027, #0f1216); border: 1px solid var(--line); display: grid; gap: 12px; }
+footer { color: var(--mute); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
+@media (max-width: 760px) {
+  .wrap { gap: 56px; }
+  .step { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .step:nth-child(even) .txt { order: 0; }
+  .step:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
+  .reels, .gets, .launch { grid-template-columns: minmax(0, 1fr); }
+  .reel video { max-height: none; }
+}
+</style>
+
+</head>
+<body>
+<main class="wrap">
+  <div class="top">
+    <div class="brand">Falcon<small>CONTENT FACTORY</small></div>
+    <div class="sw" role="group" aria-label="Language">
+      <button type="button" data-set="ru" aria-pressed="true">RU</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="rule"></div>
+    <h1>Falcon Content Factory</h1>
+    <p class="lead" lang="ru">Ваш собственный контент-завод: от идеи и исследования до готового ролика и публикации — для всех ваших брендов в одной системе.</p>
+    <p class="lead" lang="en">Your own content factory: from idea and research to a finished video and a published post — for all your brands in one system.</p>
+    <span class="pill"><span class="dot"></span><span lang="ru">Готово к подключению ваших аккаунтов</span><span lang="en">Ready to connect your accounts</span></span>
+  </header>
+
+  <section class="sec" aria-label="Video">
+    <div class="k"><span lang="ru">Видео-обзор системы</span><span lang="en">Product walkthrough</span></div>
+    <div class="player" lang="ru"><video controls playsinline preload="metadata" poster="media/obzor-poster.jpg" src="media/obzor.mp4"></video></div>
+    <div class="player" lang="en"><video controls playsinline preload="metadata" poster="media/obzor-en-poster.jpg" src="media/obzor-en.mp4"></video></div>
+  </section>
+
+  <section class="sec" aria-labelledby="how">
+    <div class="intro" style="display:grid;gap:14px">
+      <div class="k"><span lang="ru">Как это работает</span><span lang="en">How it works</span></div>
+      <h2 id="how"><span lang="ru">Шесть шагов от идеи до публикации</span><span lang="en">Six steps from idea to published post</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="txt"><span class="num">01</span>
+          <h3><span lang="ru">Исследование</span><span lang="en">Research</span></h3>
+          <p lang="ru">Система собирает удачные ролики с TikTok, Instagram, YouTube, Facebook и LinkedIn и показывает, почему они сработали: хук, структура, призыв.</p>
+          <p lang="en">The system gathers strong videos from TikTok, Instagram, YouTube, Facebook and LinkedIn and shows why they worked: hook, structure, call to action.</p></div>
+        <div class="clip" lang="ru"><video autoplay muted loop playsinline preload="auto" poster="media/step-research-ru.jpg" src="media/step-research-ru.mp4" aria-label="Research"></video><span class="live"><i></i>живой интерфейс</span></div><div class="clip" lang="en"><video autoplay muted loop playsinline preload="auto" poster="media/step-research-en.jpg" src="media/step-research-en.mp4" aria-label="Research"></video><span class="live"><i></i>live interface</span></div>
+      </div>
+      <div class="step">
+        <div class="txt"><span class="num">02</span>
+          <h3><span lang="ru">План на каждый день</span><span lang="en">A plan for every day</span></h3>
+          <p lang="ru">Календарь по каждому бренду. Каждый день система сама собирает выпуск из готовых материалов.</p>
+          <p lang="en">A calendar for each brand. Every day the system assembles the issue from finished material on its own.</p></div>
+        <div class="clip" lang="ru"><video autoplay muted loop playsinline preload="auto" poster="media/step-calendar-ru.jpg" src="media/step-calendar-ru.mp4" aria-label="Calendar"></video><span class="live"><i></i>живой интерфейс</span></div><div class="clip" lang="en"><video autoplay muted loop playsinline preload="auto" poster="media/step-calendar-en.jpg" src="media/step-calendar-en.mp4" aria-label="Calendar"></video><span class="live"><i></i>live interface</span></div>
+      </div>
+      <div class="step">
+        <div class="txt"><span class="num">03</span>
+          <h3><span lang="ru">Текст на фактах</span><span lang="en">Copy built on facts</span></h3>
+          <p lang="ru">Каждая фраза опирается на источник: сайт бренда, документ, интервью. Сразу видно, что подтверждено, а что нет.</p>
+          <p lang="en">Every line rests on a source: the brand's site, a document, an interview. You see at once what is confirmed and what is not.</p></div>
+        <div class="clip" lang="ru"><video autoplay muted loop playsinline preload="auto" poster="media/step-editor-ru.jpg" src="media/step-editor-ru.mp4" aria-label="Editor"></video><span class="live"><i></i>живой интерфейс</span></div><div class="clip" lang="en"><video autoplay muted loop playsinline preload="auto" poster="media/step-editor-en.jpg" src="media/step-editor-en.mp4" aria-label="Editor"></video><span class="live"><i></i>live interface</span></div>
+      </div>
+      <div class="step">
+        <div class="txt"><span class="num">04</span>
+          <h3><span lang="ru">AI-совет экспертов</span><span lang="en">AI expert council</span></h3>
+          <p lang="ru">Стратег, сценарист, фактчекер, критик аудитории и арт-директор разбирают каждый материал и правят его, пока он не станет сильным.</p>
+          <p lang="en">A strategist, scriptwriter, fact-checker, audience critic and art director review every piece and revise it until it is strong.</p></div>
+        <div class="clip" lang="ru"><video autoplay muted loop playsinline preload="auto" poster="media/step-council-ru.jpg" src="media/step-council-ru.mp4" aria-label="AI council"></video><span class="live"><i></i>живой интерфейс</span></div><div class="clip" lang="en"><video autoplay muted loop playsinline preload="auto" poster="media/step-council-en.jpg" src="media/step-council-en.mp4" aria-label="AI council"></video><span class="live"><i></i>live interface</span></div>
+      </div>
+      <div class="step">
+        <div class="txt"><span class="num">05</span>
+          <h3><span lang="ru">Готовый ролик в Studio</span><span lang="en">A finished video in Studio</span></h3>
+          <p lang="ru">Система сама собирает вертикальный ролик в фирменном стиле бренда. Сцены, тексты и длительность меняются прямо в окне.</p>
+          <p lang="en">The system builds a vertical video in the brand's own style. Scenes, text and timing can be changed right in the window.</p></div>
+        <div class="clip" lang="ru"><video autoplay muted loop playsinline preload="auto" poster="media/step-studio-ru.jpg" src="media/step-studio-ru.mp4" aria-label="Studio"></video><span class="live"><i></i>живой интерфейс</span></div><div class="clip" lang="en"><video autoplay muted loop playsinline preload="auto" poster="media/step-studio-en.jpg" src="media/step-studio-en.mp4" aria-label="Studio"></video><span class="live"><i></i>live interface</span></div>
+      </div>
+      <div class="step">
+        <div class="txt"><span class="num">06</span>
+          <h3><span lang="ru">Публикация под контролем</span><span lang="en">Publishing under control</span></h3>
+          <p lang="ru">Перед отправкой система проверяет текст, права и сам ролик. «Опубликовано» появляется только вместе с настоящей ссылкой на пост.</p>
+          <p lang="en">Before sending, the system checks the copy, the rights and the video itself. «Published» appears only together with a real link to the post.</p></div>
+        <div class="clip" lang="ru"><video autoplay muted loop playsinline preload="auto" poster="media/step-publications-ru.jpg" src="media/step-publications-ru.mp4" aria-label="Publications"></video><span class="live"><i></i>живой интерфейс</span></div><div class="clip" lang="en"><video autoplay muted loop playsinline preload="auto" poster="media/step-publications-en.jpg" src="media/step-publications-en.mp4" aria-label="Publications"></video><span class="live"><i></i>live interface</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="r">
+    <div class="intro" style="display:grid;gap:14px">
+      <div class="k"><span lang="ru">Сделано системой</span><span lang="en">Made by the system</span></div>
+      <h2 id="r"><span lang="ru">Первые ролики для Falcon AI и Vatan Global</span><span lang="en">First videos for Falcon AI and Vatan Global</span></h2>
+      <p lang="ru">Каждый бренд — в своём стиле. Тексты прошли AI-совет, каждая фраза опирается на сайт бренда.</p>
+      <p lang="en">Each brand in its own style. The copy went through the AI council; every line is backed by the brand's website.</p>
+    </div>
+    <div class="reels">
+      <div class="reel"><video controls playsinline preload="metadata" poster="media/falcon-cover.jpg" src="media/falcon.mp4"></video><h3>Falcon AI · «Your Logo Is Not Your Brand»</h3></div>
+      <div class="reel"><video controls playsinline preload="metadata" poster="media/vatan-cover.jpg" src="media/vatan.mp4"></video><h3><span lang="ru">Vatan Global · «Одно сообщество, две страны»</span><span lang="en">Vatan Global · «One community, two countries»</span></h3></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="g">
+    <h2 id="g"><span lang="ru">Что вы получаете</span><span lang="en">What you get</span></h2>
+    <div class="gets">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <h3><span lang="ru">Все бренды в одном месте</span><span lang="en">All brands in one place</span></h3>
+        <p lang="ru">Falcon, Vatan и личный бренд — каждый со своим стилем, правилами и каналами. Материалы не перепутаются.</p>
+        <p lang="en">Falcon, Vatan and your personal brand — each with its own style, rules and channels. Nothing gets mixed up.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3><span lang="ru">Ничего не уйдёт без вас</span><span lang="en">Nothing goes out without you</span></h3>
+        <p lang="ru">Вы решаете, что публикуется автоматически, а что ждёт вашего одобрения.</p>
+        <p lang="en">You decide what is published automatically and what waits for your approval.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-4 3 2 5-6"/></svg></div>
+        <h3><span lang="ru">Честные цифры</span><span lang="en">Honest numbers</span></h3>
+        <p lang="ru">Только реальные данные площадок. Если цифры нет, вы видите «—», а не выдуманное значение.</p>
+        <p lang="en">Only real platform data. If a number is unknown you see «—», never an invented value.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></div>
+        <h3><span lang="ru">Три языка</span><span lang="en">Three languages</span></h3>
+        <p lang="ru">Русский, узбекский и английский — и в интерфейсе, и в самих роликах.</p>
+        <p lang="en">Russian, Uzbek and English — in the interface and in the videos themselves.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+        <h3><span lang="ru">С телефона и компьютера</span><span lang="en">Phone and desktop</span></h3>
+        <p lang="ru">Одобрить ролик или посмотреть план можно прямо с телефона.</p>
+        <p lang="en">Approve a video or check the plan straight from your phone.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3><span lang="ru">Каждый день без ручной рутины</span><span lang="en">Daily output without busywork</span></h3>
+        <p lang="ru">План, проверки, ролики и отправка идут сами. Вам остаются решения.</p>
+        <p lang="en">Planning, checks, videos and sending run on their own. You keep the decisions.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="l">
+    <h2 id="l"><span lang="ru">Запуск — три шага</span><span lang="en">Launch in three steps</span></h2>
+    <div class="launch">
+      <div class="card"><span class="num">01</span><h3><span lang="ru">Подключаем аккаунты</span><span lang="en">Connect your accounts</span></h3>
+        <p lang="ru">Instagram, Facebook, TikTok, YouTube или BulkPublish — система проверяет каждый канал перед первой публикацией.</p>
+        <p lang="en">Instagram, Facebook, TikTok, YouTube or BulkPublish — the system verifies every channel before the first post.</p></div>
+      <div class="card"><span class="num">02</span><h3><span lang="ru">Утверждаете стиль</span><span lang="en">Approve the brand style</span></h3>
+        <p lang="ru">Логотипы, цвета и шрифты каждого бренда — один раз, дальше система держит их сама.</p>
+        <p lang="en">Logos, colors and fonts for each brand — once; after that the system keeps them consistent.</p></div>
+      <div class="card"><span class="num">03</span><h3><span lang="ru">Ежедневные выпуски</span><span lang="en">Daily publishing</span></h3>
+        <p lang="ru">14 дней пилота: каждый день новые материалы со ссылкой на каждый вышедший пост.</p>
+        <p lang="en">A 14-day pilot: new content every day, with a link to every post that goes live.</p></div>
+    </div>
+    <div class="cta">
+      <h3 style="font:700 26px/1.2 var(--display)"><span lang="ru">Покажу систему вживую за 15 минут</span><span lang="en">A live 15-minute walkthrough</span></h3>
+      <p lang="ru">По видеосвязи, в любое удобное для вас время: пройдём весь путь материала от идеи до публикации.</p>
+      <p lang="en">Over a video call at any time that suits you: we'll walk through a piece of content from idea to publication.</p>
+    </div>
+  </section>
+
+  <footer>Falcon Content Factory · <span lang="ru">ноябрь 2026</span><span lang="en">November 2026</span></footer>
+</main>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  let l = 'ru';
+  try { l = localStorage.getItem('fcf.lang') || 'ru'; } catch (e) {}
+  const set = (v) => {
+    root.dataset.l = v; root.lang = v;
+    document.querySelectorAll('.sw button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.set === v)));
+    document.querySelectorAll('.player video, .clip video').forEach((vd) => { const own = vd.parentElement.getAttribute('lang'); if (own !== v) { try { vd.pause(); } catch (e) {} } else if (vd.parentElement.classList.contains('clip')) { try { vd.play(); } catch (e) {} } });
+    try { localStorage.setItem('fcf.lang', v); } catch (e) {}
+  };
+  document.querySelectorAll('.sw button').forEach((b) => b.addEventListener('click', () => set(b.dataset.set)));
+  set(l === 'en' ? 'en' : 'ru');
+})();
+</script>
+
+
+</body>
+</html>
